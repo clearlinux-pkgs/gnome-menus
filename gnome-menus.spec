@@ -4,7 +4,7 @@
 #
 Name     : gnome-menus
 Version  : 3.13.3
-Release  : 1
+Release  : 2
 URL      : https://download.gnome.org/core/3.21/3.21.4/sources/gnome-menus-3.13.3.tar.xz
 Source0  : https://download.gnome.org/core/3.21/3.21.4/sources/gnome-menus-3.13.3.tar.xz
 Summary  : Desktop Menu Specification Implementation
@@ -66,6 +66,7 @@ locales components for the gnome-menus package.
 
 %build
 export LANG=C
+export SOURCE_DATE_EPOCH=1491317057
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -77,6 +78,7 @@ export no_proxy=localhost
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
+export SOURCE_DATE_EPOCH=1491317057
 rm -rf %{buildroot}
 %make_install
 %find_lang gnome-menus-3.0
@@ -86,6 +88,7 @@ rm -rf %{buildroot}
 
 %files data
 %defattr(-,root,root,-)
+/usr/lib64/girepository-1.0/GMenu-3.0.typelib
 /usr/share/desktop-directories/AudioVideo.directory
 /usr/share/desktop-directories/Development.directory
 /usr/share/desktop-directories/Education.directory
@@ -102,19 +105,19 @@ rm -rf %{buildroot}
 /usr/share/desktop-directories/X-GNOME-SystemSettings.directory
 /usr/share/desktop-directories/X-GNOME-Utilities.directory
 /usr/share/desktop-directories/X-GNOME-WebApplications.directory
-/usr/share/gir-1.0/GMenu-3.0.gir
+/usr/share/gir-1.0/*.gir
 
 %files dev
 %defattr(-,root,root,-)
 /usr/include/gnome-menus-3.0/gmenu-tree.h
-/usr/lib64/*.so
-/usr/lib64/girepository-1.0/GMenu-3.0.typelib
-/usr/lib64/pkgconfig/*.pc
+/usr/lib64/libgnome-menu-3.so
+/usr/lib64/pkgconfig/libgnome-menu-3.0.pc
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/*.so.*
+/usr/lib64/libgnome-menu-3.so.0
+/usr/lib64/libgnome-menu-3.so.0.0.1
 
-%files locales -f gnome-menus-3.0.lang 
+%files locales -f gnome-menus-3.0.lang
 %defattr(-,root,root,-)
 
