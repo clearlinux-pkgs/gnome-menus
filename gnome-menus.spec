@@ -4,9 +4,9 @@
 #
 Name     : gnome-menus
 Version  : 3.13.3
-Release  : 2
-URL      : https://download.gnome.org/core/3.21/3.21.4/sources/gnome-menus-3.13.3.tar.xz
-Source0  : https://download.gnome.org/core/3.21/3.21.4/sources/gnome-menus-3.13.3.tar.xz
+Release  : 3
+URL      : http://ftp.gnome.org/pub/gnome/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
+Source0  : http://ftp.gnome.org/pub/gnome/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
 Summary  : Desktop Menu Specification Implementation
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
@@ -65,8 +65,11 @@ locales components for the gnome-menus package.
 %setup -q -n gnome-menus-3.13.3
 
 %build
+export http_proxy=http://127.0.0.1:9/
+export https_proxy=http://127.0.0.1:9/
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1491317057
+export SOURCE_DATE_EPOCH=1492790725
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -74,14 +77,17 @@ make V=1  %{?_smp_mflags}
 export LANG=C
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
-export no_proxy=localhost
+export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1491317057
+export SOURCE_DATE_EPOCH=1492790725
 rm -rf %{buildroot}
 %make_install
 %find_lang gnome-menus-3.0
+## make_install_append content
+mv %{buildroot}%{_sysconfdir}/xdg %{buildroot}%{_datadir}/. && rmdir %{buildroot}%{_sysconfdir}
+## make_install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -106,6 +112,7 @@ rm -rf %{buildroot}
 /usr/share/desktop-directories/X-GNOME-Utilities.directory
 /usr/share/desktop-directories/X-GNOME-WebApplications.directory
 /usr/share/gir-1.0/*.gir
+/usr/share/xdg/menus/gnome-applications.menu
 
 %files dev
 %defattr(-,root,root,-)
