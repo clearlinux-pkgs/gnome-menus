@@ -4,7 +4,7 @@
 #
 Name     : gnome-menus
 Version  : 3.13.3
-Release  : 4
+Release  : 5
 URL      : http://ftp.gnome.org/pub/gnome/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
 Source0  : http://ftp.gnome.org/pub/gnome/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
 Summary  : Desktop Menu Specification Implementation
