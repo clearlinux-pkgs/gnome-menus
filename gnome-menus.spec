@@ -4,9 +4,9 @@
 #
 Name     : gnome-menus
 Version  : 3.13.3
-Release  : 5
-URL      : http://ftp.gnome.org/pub/gnome/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
-Source0  : http://ftp.gnome.org/pub/gnome/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
+Release  : 6
+URL      : https://download.gnome.org/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
+Source0  : https://download.gnome.org/sources/gnome-menus/3.13/gnome-menus-3.13.3.tar.xz
 Summary  : Desktop Menu Specification Implementation
 Group    : Development/Tools
 License  : GPL-2.0 LGPL-2.0
@@ -69,7 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1492791850
+export SOURCE_DATE_EPOCH=1508272950
 %configure --disable-static
 make V=1  %{?_smp_mflags}
 
@@ -81,7 +81,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1492791850
+export SOURCE_DATE_EPOCH=1508272950
 rm -rf %{buildroot}
 %make_install
 %find_lang gnome-menus-3.0
