@@ -1,4 +1,63 @@
 ==============
+Version 3.32.0
+==============
+
+* Translation updates
+
+===============
+Version 3.31.92
+===============
+
+* Stop using gnome-common (Javier)
+* Add nm-connection-editor to the Utilities category (Kalev)
+* Restore minimal Sundry app folder for upgrades. Users can remove it
+  by running gsettings reset-recursively org.gnome.desktop.app-folders
+  and logging out and logging back in. (Jeremy)
+* Translation updates
+
+Contributors:
+ Jeremy Bicha, Javier Jardón, Kalev Lember
+
+===============
+Version 3.31.90
+===============
+
+* Fix missing close tag that broke traditional menu users (Jeremy)
+* Add CI to check the validity of our menu file so we don't make
+  that mistake as easily next time (Jeremy)
+* Add gnome-abrt to the Utilities category (Kalev)
+* Translation updates
+
+Contributors:
+ Jeremy Bicha, Kalev Lember
+
+==============
+Version 3.31.4
+==============
+
+* Remove the Sundry category (Jeremy)
+* Switch to modern realpath (Pino)
+* Stop using intltool (Alberts)
+* Translation updates
+
+Contributors:
+ Jeremy Bicha, Alberts Muktupāvels, Pino Toscano
+
+==============
+Version 3.31.3
+==============
+
+* desktop-entries: support multiple desktops in XDG_CURRENT_DESKTOP (Alberts)
+* libmenu: Remove support for legacy-dirs (Florian)
+* layout: Update .desktop filenames (Jeremy)
+* layout: Drop obsolete Fedora special case .desktop filenames (Jeremy)
+* miscellaneous fixes (Andre, Josselin)
+
+Contributors:
+ Jeremy Bicha, Andre Klapper, Josselin Mouette, Alberts Muktupāvels
+ Florian Müllner
+
+==============
 Version 3.13.3
 ==============
 
