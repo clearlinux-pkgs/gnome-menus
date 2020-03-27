@@ -4,7 +4,7 @@
 #
 Name     : gnome-menus
 Version  : 3.32.0
-Release  : 12
+Release  : 13
 URL      : https://download.gnome.org/sources/gnome-menus/3.32/gnome-menus-3.32.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-menus/3.32/gnome-menus-3.32.0.tar.xz
 Summary  : GNOME menu specifications
