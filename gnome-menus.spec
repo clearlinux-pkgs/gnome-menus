@@ -4,7 +4,7 @@
 #
 Name     : gnome-menus
 Version  : 3.36.0
-Release  : 14
+Release  : 15
 URL      : https://download.gnome.org/sources/gnome-menus/3.36/gnome-menus-3.36.0.tar.xz
 Source0  : https://download.gnome.org/sources/gnome-menus/3.36/gnome-menus-3.36.0.tar.xz
 Summary  : Desktop Menu Specification Implementation
